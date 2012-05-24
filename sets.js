@@ -111,6 +111,12 @@ Set.prototype.greatest = function(){
 	
 	return this.greatest;
 }
+
+Set.prototype.contains = function(v){
+	return this.map[v] !== undefined;
+}
+
+
 Set.prototype.add = function(v){
 	if(this.map[v]) return;
 	
@@ -279,6 +285,7 @@ Invariant.prototype.least == function(){
 Invariant.prototype.greatest == function(){
 	return this.s.least();
 }
+Invariant.prototype.invariant = function(){return this;}
 
 var emptySet = new Set();
 emptySet.list = new Array(0);
